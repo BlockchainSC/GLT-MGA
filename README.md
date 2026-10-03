@@ -1,4 +1,4 @@
-# GLT-MGA
+# GLT-MGA: Global-Local Temporal Multi-View Graph Attention for Smart Contract Vulnerability Detection
 
 Research artifact for **GLT-MGA**, a global-local multi-view graph-attention framework for smart-contract vulnerability detection.
 
