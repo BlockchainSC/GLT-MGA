@@ -1,72 +1,86 @@
-# GLT-MGA: Global-Local Temporal Multi-View Graph Attention for Smart Contract Vulnerability Detection
+# GLT-MGA:Global-Local Temporal Multi-View Graph Attention for Smart Contract Vulnerability Detection
 
 Research artifact for **GLT-MGA**, a global-local multi-view graph-attention framework for smart-contract vulnerability detection.
 
 GLT-MGA performs function-level **reentrancy (SWC-107)** and **timestamp-dependency (SWC-116)** detection. Its local branch aligns AST, CFG, and DFG evidence; its bounded global branch models relevant same-contract call and shared-state context; and gated fusion combines the local and global representations.
 
-## Architecture
-
-<p align="center">
-  <a href="figures/figure_1_overview.pdf">
-    <img src="figures/figure_1_overview.png" alt="GLT-MGA architecture" width="900">
-  </a>
-</p>
-
-The PNG above is used for GitHub preview. The paper-quality vector version is available at [`figures/figure_1_overview.pdf`](figures/figure_1_overview.pdf).
-
-## Additional manuscript figures
-
-The following figures provide a compact visual summary of the motivation and core GLT-MGA components. PNG files are used for inline GitHub rendering, while the corresponding PDFs remain available as paper-quality vector versions.
-
-### Target-centered local evidence and bounded same-contract context
+## Method Overview
 
 <p align="center">
   <a href="figures/problem_overview.pdf">
-    <img src="figures/problem_overview.png" alt="Target-centered local evidence and bounded same-contract context" width="900">
+    <img src="figures/problem_overview.png" alt="Conceptual overview of target-centered local evidence and bounded same-contract context in GLT-MGA" width="900">
   </a>
 </p>
 
-This conceptual view shows how GLT-MGA combines focused target-function AST, CFG, and DFG evidence with bounded same-contract caller, callee, and shared-state context, rather than using either an isolated function or the complete contract.
+GLT-MGA is designed to preserve fine-grained evidence from the target function while incorporating only relevant same-contract context. The local representation aligns AST, CFG, and DFG views over the task-relevant region, whereas the bounded global context captures selected caller, callee, and shared-state relations without encoding the complete contract.
 
-### Reentrancy motivating example
+### Vulnerability Patterns
+
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
+
+<strong>Reentrancy (SWC-107)</strong><br><br>
+
+<a href="figures/reentrancy.pdf">
+  <img src="figures/reentrancy.png" alt="Motivating reentrancy example" width="100%">
+</a>
+
+<sub>A low-level external call occurs before the target-function state update; related same-contract functions provide complementary shared-state context.</sub>
+
+</td>
+<td width="50%" valign="top" align="center">
+
+<strong>Timestamp Dependency (SWC-116)</strong><br><br>
+
+<a href="figures/timestamp.pdf">
+  <img src="figures/timestamp.png" alt="Motivating timestamp-dependency example" width="100%">
+</a>
+
+<sub>A <code>block.timestamp</code>-derived decision controls a subsequent value transfer, with related same-contract functions providing shared-state context.</sub>
+
+</td>
+</tr>
+</table>
+
+## GLT-MGA Architecture
 
 <p align="center">
-  <a href="figures/reentrancy.pdf">
-    <img src="figures/reentrancy.png" alt="Reentrancy motivating example" width="850">
+  <a href="figures/figure_1_overview.pdf">
+    <img src="figures/figure_1_overview.png" alt="Proposed GLT-MGA framework for function-level smart contract vulnerability detection" width="900">
   </a>
 </p>
 
-The example highlights the vulnerability-relevant call-before-write execution order in the target function and the complementary same-contract shared-state context.
+For each target function, GLT-MGA constructs an aligned local multi-view graph and a bounded target-centered global context graph. The two branches are encoded separately through scheduled relation-specific propagation and branch-specific multi-head query-based attentive readout. A context-availability mask and a learned scalar gate then control the contribution of global context to the fused function representation used for binary classification.
 
-### Timestamp-dependency motivating example
+### Core Encoding Components
 
-<p align="center">
-  <a href="figures/timestamp.pdf">
-    <img src="figures/timestamp.png" alt="Timestamp-dependency motivating example" width="850">
-  </a>
-</p>
+<table>
+<tr>
+<td width="50%" valign="top" align="center">
 
-The example highlights a `block.timestamp`-dependent decision that controls a later value transfer, together with related same-contract shared-state context.
+<strong>Scheduled Temporal Message Propagation</strong><br><br>
 
-### Scheduled temporal message propagation
+<a href="figures/tmp.pdf">
+  <img src="figures/tmp.png" alt="Scheduled temporal message propagation in GLT-MGA" width="100%">
+</a>
 
-<p align="center">
-  <a href="figures/tmp.pdf">
-    <img src="figures/tmp.png" alt="Scheduled temporal message propagation" width="850">
-  </a>
-</p>
+<sub>Relation-typed edges are processed through a graph-derived sequence of scheduled substeps, enabling ordered information propagation over program relations.</sub>
 
-GLT-MGA schedules relation-specific graph edges across propagation substeps so that information is propagated through program relations in an ordered manner.
+</td>
+<td width="50%" valign="top" align="center">
 
-### Multi-head query-based attentive readout
+<strong>Multi-Head Query-Based Attentive Readout</strong><br><br>
 
-<p align="center">
-  <a href="figures/MHA.pdf">
-    <img src="figures/MHA.png" alt="Multi-head query-based attentive readout" width="850">
-  </a>
-</p>
+<a href="figures/MHA.pdf">
+  <img src="figures/MHA.png" alt="Branch-specific multi-head query-based attentive readout in GLT-MGA" width="100%">
+</a>
 
-Learnable head queries assign relative importance to graph nodes, and the resulting head embeddings are concatenated to form the branch-level graph representation.
+<sub>Learnable head queries assign relative importance to graph nodes, and the weighted head representations are concatenated into a fixed-dimensional branch embedding.</sub>
+
+</td>
+</tr>
+</table>
 
 ## Results
 
@@ -206,20 +220,7 @@ The `local` variant disables global propagation/readout and bypasses local-globa
 
 ## Figures
 
-Paper-quality vector figures are retained as PDFs under `figures/`, with PNG copies used only for inline GitHub previews. Each preview above links to its corresponding PDF.
-
-The README-rendered figure pairs are:
-
-```text
-figures/figure_1_overview.pdf   + figures/figure_1_overview.png
-figures/problem_overview.pdf    + figures/problem_overview.png
-figures/reentrancy.pdf          + figures/reentrancy.png
-figures/timestamp.pdf           + figures/timestamp.png
-figures/tmp.pdf                 + figures/tmp.png
-figures/MHA.pdf                 + figures/MHA.png
-```
-
-Propagation-round sensitivity figures remain available with the experimental artifacts and do not need to be duplicated inline in the README.
+The `figures/` directory contains the manuscript figures and their vector source versions used in the paper. The figures embedded above provide the conceptual motivation, the complete GLT-MGA architecture, and the two principal encoding components. Additional experimental figures are retained with the corresponding result artifacts.
 
 ## Citation
 
