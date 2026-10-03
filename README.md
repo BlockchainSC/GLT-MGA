@@ -219,8 +219,6 @@ figures/tmp.pdf                 + figures/tmp.png
 figures/MHA.pdf                 + figures/MHA.png
 ```
 
-Propagation-round sensitivity figures remain available with the experimental artifacts and do not need to be duplicated inline in the README.
-
 ## Citation
 
 Citation information will be added when the final publication record and DOI are available.
