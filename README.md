@@ -14,6 +14,60 @@ GLT-MGA performs function-level **reentrancy (SWC-107)** and **timestamp-depende
 
 The PNG above is used for GitHub preview. The paper-quality vector version is available at [`figures/figure_1_overview.pdf`](figures/figure_1_overview.pdf).
 
+## Additional manuscript figures
+
+The following figures provide a compact visual summary of the motivation and core GLT-MGA components. PNG files are used for inline GitHub rendering, while the corresponding PDFs remain available as paper-quality vector versions.
+
+### Target-centered local evidence and bounded same-contract context
+
+<p align="center">
+  <a href="figures/problem_overview.pdf">
+    <img src="figures/problem_overview.png" alt="Target-centered local evidence and bounded same-contract context" width="900">
+  </a>
+</p>
+
+This conceptual view shows how GLT-MGA combines focused target-function AST, CFG, and DFG evidence with bounded same-contract caller, callee, and shared-state context, rather than using either an isolated function or the complete contract.
+
+### Reentrancy motivating example
+
+<p align="center">
+  <a href="figures/reentrancy.pdf">
+    <img src="figures/reentrancy.png" alt="Reentrancy motivating example" width="850">
+  </a>
+</p>
+
+The example highlights the vulnerability-relevant call-before-write execution order in the target function and the complementary same-contract shared-state context.
+
+### Timestamp-dependency motivating example
+
+<p align="center">
+  <a href="figures/timestamp.pdf">
+    <img src="figures/timestamp.png" alt="Timestamp-dependency motivating example" width="850">
+  </a>
+</p>
+
+The example highlights a `block.timestamp`-dependent decision that controls a later value transfer, together with related same-contract shared-state context.
+
+### Scheduled temporal message propagation
+
+<p align="center">
+  <a href="figures/tmp.pdf">
+    <img src="figures/tmp.png" alt="Scheduled temporal message propagation" width="850">
+  </a>
+</p>
+
+GLT-MGA schedules relation-specific graph edges across propagation substeps so that information is propagated through program relations in an ordered manner.
+
+### Multi-head query-based attentive readout
+
+<p align="center">
+  <a href="figures/MHA.pdf">
+    <img src="figures/MHA.png" alt="Multi-head query-based attentive readout" width="850">
+  </a>
+</p>
+
+Learnable head queries assign relative importance to graph nodes, and the resulting head embeddings are concatenated to form the branch-level graph representation.
+
 ## Results
 
 | Task | Configuration | Accuracy | Precision | Recall | F1 | AUC |
@@ -152,16 +206,20 @@ The `local` variant disables global propagation/readout and bypasses local-globa
 
 ## Figures
 
-Paper-quality vector figures are retained as PDFs under `figures/`. For inline rendering in this README, GitHub-friendly PNG previews should be committed alongside the PDFs.
+Paper-quality vector figures are retained as PDFs under `figures/`, with PNG copies used only for inline GitHub previews. Each preview above links to its corresponding PDF.
 
-The main architecture figure is:
+The README-rendered figure pairs are:
 
 ```text
-figures/figure_1_overview.pdf
-figures/figure_1_overview.png
+figures/figure_1_overview.pdf   + figures/figure_1_overview.png
+figures/problem_overview.pdf    + figures/problem_overview.png
+figures/reentrancy.pdf          + figures/reentrancy.png
+figures/timestamp.pdf           + figures/timestamp.png
+figures/tmp.pdf                 + figures/tmp.png
+figures/MHA.pdf                 + figures/MHA.png
 ```
 
-Other retained paper figures include the reentrancy and timestamp motivating examples, temporal propagation, multi-head attention, and propagation-round sensitivity plots.
+Propagation-round sensitivity figures remain available with the experimental artifacts and do not need to be duplicated inline in the README.
 
 ## Citation
 
