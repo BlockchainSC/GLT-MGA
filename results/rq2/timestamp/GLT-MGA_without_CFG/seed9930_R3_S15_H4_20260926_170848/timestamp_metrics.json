@@ -1,0 +1,92 @@
+{
+  "accuracy": 0.8419811320754716,
+  "precision": 0.8753894080996885,
+  "recall": 0.7493333333333333,
+  "f1": 0.807471264367816,
+  "auc": 0.8914672304439746,
+  "configured_threshold": 0.45,
+  "selected_threshold": 0.45,
+  "threshold_source": "configured_fixed",
+  "configured_metrics": {
+    "accuracy": 0.8419811320754716,
+    "precision": 0.8753894080996885,
+    "recall": 0.7493333333333333,
+    "f1": 0.807471264367816,
+    "auc": 0.8914672304439746
+  },
+  "best_validation_threshold_metrics": null,
+  "best_val_loss": 0.40119943022727966,
+  "best_val_epoch": 74,
+  "best_checkpoint_file": "/home/HardDisk/imran/GLT-MGA_GitHub/0.output_test/Reentrancy_tiemastamp_RQ2_results/ablation_study/timestamp/GLT-MGA_without_CFG/seed9930_R3_S15_H4_20260926_170848/2026-09-26-22-44-29_3468456_model_best.pickle",
+  "evaluation_split": "held_out_test",
+  "internal_validation_metrics": {
+    "accuracy": 0.8101983002832861,
+    "precision": 0.8478260869565217,
+    "recall": 0.7177914110429447,
+    "f1": 0.777408637873754,
+    "auc": 0.8947691314175009,
+    "evaluation_split": "internal_validation",
+    "configured_threshold": 0.45,
+    "best_val_loss": 0.40119943022727966,
+    "best_val_epoch": 74
+  },
+  "confusion_matrix": {
+    "threshold": 0.45,
+    "labels": [
+      "negative",
+      "positive"
+    ],
+    "matrix_order": "[[TN, FP], [FN, TP]]",
+    "matrix": [
+      [
+        433,
+        40
+      ],
+      [
+        94,
+        281
+      ]
+    ],
+    "row_normalized_matrix": [
+      [
+        0.9154334038054969,
+        0.08456659619450317
+      ],
+      [
+        0.25066666666666665,
+        0.7493333333333333
+      ]
+    ],
+    "tn": 433,
+    "fp": 40,
+    "fn": 94,
+    "tp": 281,
+    "total": 848
+  },
+  "experiment_config": {
+    "task": "timestamp",
+    "random_seed": 9930,
+    "configured_threshold": 0.45,
+    "num_epochs": 500,
+    "patience": 50,
+    "learning_rate": 0.001,
+    "hidden_size": 256,
+    "propagation_rounds": 3,
+    "propagation_substeps": 15,
+    "readout_num_heads": 4,
+    "readout_attn_hidden": 128,
+    "fusion_mode": "local_global_gate",
+    "gate_hidden_size": 128,
+    "outer_train_file": "/home/HardDisk/imran/GLT-MGA_GitHub/train_data/ablation_study/GLT-MGA_without_CFG/timestamp_down_sample/train.json",
+    "test_file": "/home/HardDisk/imran/GLT-MGA_GitHub/train_data/ablation_study/GLT-MGA_without_CFG/timestamp_down_sample/valid.json",
+    "legacy_valid_file": "/home/HardDisk/imran/GLT-MGA_GitHub/train_data/ablation_study/GLT-MGA_without_CFG/timestamp_down_sample/valid.json",
+    "internal_validation_ratio": 0.1,
+    "internal_split_seed": 9930,
+    "outer_train_samples": 3445,
+    "train_samples": 3092,
+    "valid_samples": 353,
+    "test_samples": 848,
+    "internal_train_samples": 3092,
+    "internal_validation_samples": 353
+  }
+}

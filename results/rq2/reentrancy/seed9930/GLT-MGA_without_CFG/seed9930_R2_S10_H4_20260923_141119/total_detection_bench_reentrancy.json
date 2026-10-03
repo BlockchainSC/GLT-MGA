@@ -1,0 +1,13 @@
+{
+  "file": "/home/HardDisk/imran/GLT-MGA_GitHub/train_data/ablation_study/GLT-MGA_without_CFG/reentrancy/valid.json",
+  "contracts_in_file": 317,
+  "measured_batches": 1,
+  "measured_contracts": 317,
+  "json_load_sec": 0.0972407109948108,
+  "preprocess_sec": 1.0375039480131818,
+  "warmup_infer_sec": 0.38054404000286013,
+  "batch_plus_infer_sec": 1.8334530410065781,
+  "total_detection_sec_measured": 2.9681977000145707,
+  "avg_total_detection_ms_per_contract": 9.36339968458855,
+  "contracts_per_sec": 106.79881599478493
+}

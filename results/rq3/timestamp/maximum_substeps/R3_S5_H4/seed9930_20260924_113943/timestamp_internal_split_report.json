@@ -1,0 +1,49 @@
+{
+  "protocol": "outer_train_internal_validation_outer_test",
+  "split_unit": "contract_key",
+  "internal_validation_ratio": 0.1,
+  "internal_split_seed": 9930,
+  "outer_train_samples": 3445,
+  "outer_train_contracts": 2768,
+  "internal_train_samples": 3092,
+  "internal_train_contracts": 2491,
+  "internal_validation_samples": 353,
+  "internal_validation_contracts": 277,
+  "realized_validation_sample_ratio": 0.10246734397677794,
+  "realized_validation_contract_ratio": 0.10007225433526011,
+  "sample_label_counts": {
+    "outer_train": {
+      "0": 1897,
+      "1": 1548
+    },
+    "internal_train": {
+      "0": 1707,
+      "1": 1385
+    },
+    "internal_validation": {
+      "0": 190,
+      "1": 163
+    }
+  },
+  "contract_label_strata": {
+    "0": {
+      "outer_train_contracts": 1485,
+      "internal_train_contracts": 1336,
+      "internal_validation_contracts": 149
+    },
+    "1": {
+      "outer_train_contracts": 1283,
+      "internal_train_contracts": 1155,
+      "internal_validation_contracts": 128
+    }
+  },
+  "train_validation_contract_overlap_count": 0,
+  "outer_test_file": "/home/HardDisk/imran/GLT-MGA_GitHub/train_data/timestamp/valid.json",
+  "outer_test_samples": 848,
+  "outer_test_contracts": 692,
+  "outer_test_sample_label_counts": {
+    "0": 473,
+    "1": 375
+  },
+  "outer_train_test_contract_overlap_count": 0
+}

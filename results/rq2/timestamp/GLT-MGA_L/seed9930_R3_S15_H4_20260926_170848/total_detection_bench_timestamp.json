@@ -1,0 +1,13 @@
+{
+  "file": "/home/HardDisk/imran/GLT-MGA_GitHub/train_data/ablation_study/GLT-MGA_L/timestamp_down_sample/valid.json",
+  "contracts_in_file": 848,
+  "measured_batches": 1,
+  "measured_contracts": 848,
+  "json_load_sec": 0.3161901100538671,
+  "preprocess_sec": 5.781499602948315,
+  "warmup_infer_sec": 1.6597211660118774,
+  "batch_plus_infer_sec": 7.330682666040957,
+  "total_detection_sec_measured": 13.42837237904314,
+  "avg_total_detection_ms_per_contract": 15.835344786607475,
+  "contracts_per_sec": 63.14987223048886
+}

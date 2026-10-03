@@ -1,0 +1,7 @@
+{
+  "measured_batches": 1,
+  "measured_graphs": 848,
+  "total_infer_sec": 2.035390655975789,
+  "avg_infer_ms_per_graph": 2.4002248301601283,
+  "throughput_graphs_per_sec": 416.6276373089958
+}

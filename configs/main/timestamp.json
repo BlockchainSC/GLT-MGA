@@ -1,0 +1,21 @@
+{
+  "common": {
+    "num_epochs": 500,
+    "patience": 50,
+    "learning_rate": 0.001,
+    "hidden_size": 256,
+    "propagation_rounds": 3,
+    "propagation_substeps": 15,
+    "readout_num_heads": 4,
+    "readout_attn_hidden": 128,
+    "class_weight_negative": 1.0,
+    "class_weight_positive": 1.0,
+    "internal_validation_ratio": 0.10,
+    "internal_split_seed": 9930
+  },
+  "timestamp": {
+    "train_file": "train_data/timestamp/train.json",
+    "valid_file": "train_data/timestamp/valid.json",
+    "test_file": "train_data/timestamp/valid.json"
+  }
+}

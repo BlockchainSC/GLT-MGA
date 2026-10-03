@@ -1,0 +1,13 @@
+{
+  "file": "/home/HardDisk/imran/GLT-MGA_GitHub/train_data/timestamp/valid.json",
+  "contracts_in_file": 848,
+  "measured_batches": 1,
+  "measured_contracts": 848,
+  "json_load_sec": 0.3057121339952573,
+  "preprocess_sec": 4.5794401860039216,
+  "warmup_infer_sec": 1.4908941840112675,
+  "batch_plus_infer_sec": 6.660880190000171,
+  "total_detection_sec_measured": 11.54603250999935,
+  "avg_total_detection_ms_per_contract": 13.615604374999233,
+  "contracts_per_sec": 73.4451422396045
+}

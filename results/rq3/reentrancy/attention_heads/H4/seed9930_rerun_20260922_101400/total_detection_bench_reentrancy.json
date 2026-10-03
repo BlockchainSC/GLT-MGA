@@ -1,0 +1,13 @@
+{
+  "file": "/home/HardDisk/imran/GLT-MGA_GitHub/train_data/reentrancy/valid.json",
+  "contracts_in_file": 317,
+  "measured_batches": 1,
+  "measured_contracts": 317,
+  "json_load_sec": 0.11370247800005018,
+  "preprocess_sec": 1.1934121379999851,
+  "warmup_infer_sec": 0.4881320529984805,
+  "batch_plus_infer_sec": 1.8442746050004644,
+  "total_detection_sec_measured": 3.1513892210004997,
+  "avg_total_detection_ms_per_contract": 9.941290917982649,
+  "contracts_per_sec": 100.5905579315776
+}

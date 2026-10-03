@@ -1,0 +1,14 @@
+name: glt-mga
+channels:
+  - defaults
+dependencies:
+  - python=3.7.12
+  - pip
+  - pip:
+      - tensorflow==1.14.0
+      - numpy==1.21.6
+      - scipy==1.7.3
+      - scikit-learn==1.0.2
+      - matplotlib==3.5.3
+      - tqdm==4.67.3
+      - docopt==0.6.2

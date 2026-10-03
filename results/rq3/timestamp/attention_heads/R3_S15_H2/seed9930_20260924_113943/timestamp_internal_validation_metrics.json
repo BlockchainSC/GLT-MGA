@@ -1,0 +1,11 @@
+{
+  "accuracy": 0.9518413597733711,
+  "precision": 0.9397590361445783,
+  "recall": 0.9570552147239264,
+  "f1": 0.9483282674772037,
+  "auc": 0.9870842751049403,
+  "evaluation_split": "internal_validation",
+  "configured_threshold": 0.45,
+  "best_val_loss": 0.16231681406497955,
+  "best_val_epoch": 372
+}

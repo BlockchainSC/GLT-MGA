@@ -1,0 +1,33 @@
+{
+  "threshold": 0.45,
+  "labels": [
+    "negative",
+    "positive"
+  ],
+  "matrix_order": "[[TN, FP], [FN, TP]]",
+  "matrix": [
+    [
+      458,
+      15
+    ],
+    [
+      27,
+      348
+    ]
+  ],
+  "row_normalized_matrix": [
+    [
+      0.9682875264270613,
+      0.03171247357293869
+    ],
+    [
+      0.072,
+      0.928
+    ]
+  ],
+  "tn": 458,
+  "fp": 15,
+  "fn": 27,
+  "tp": 348,
+  "total": 848
+}

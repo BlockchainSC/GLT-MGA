@@ -1,0 +1,42 @@
+{
+  "json_load_sec": {
+    "total_sec": 3.198713185993256,
+    "count": 2,
+    "avg_sec": 1.599356592996628
+  },
+  "graph_schedule_sec": {
+    "total_sec": 10.385273363644956,
+    "count": 4293,
+    "avg_sec": 0.0024191179510004556
+  },
+  "graph_edges": {
+    "total_sec": 490216.0,
+    "count": 4293,
+    "avg_sec": 114.18961099464244
+  },
+  "local_graph_edges": {
+    "total_sec": 462586.0,
+    "count": 4293,
+    "avg_sec": 107.7535522944328
+  },
+  "global_graph_edges": {
+    "total_sec": 27630.0,
+    "count": 4293,
+    "avg_sec": 6.436058700209643
+  },
+  "graph_schedule_sec_per_edge": {
+    "total_sec": 10.385273363644956,
+    "count": 490216,
+    "avg_sec": 2.1185096699505843e-05
+  },
+  "process_raw_graphs_sec": {
+    "total_sec": 10.511100695992354,
+    "count": 2,
+    "avg_sec": 5.255550347996177
+  },
+  "total_preprocess_sec": {
+    "total_sec": 13.886217044957448,
+    "count": 2,
+    "avg_sec": 6.943108522478724
+  }
+}

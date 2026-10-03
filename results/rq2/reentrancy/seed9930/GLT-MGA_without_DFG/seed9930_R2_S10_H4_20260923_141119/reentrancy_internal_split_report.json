@@ -1,0 +1,49 @@
+{
+  "protocol": "outer_train_internal_validation_outer_test",
+  "split_unit": "contract_key",
+  "internal_validation_ratio": 0.1,
+  "internal_split_seed": 9930,
+  "outer_train_samples": 1295,
+  "outer_train_contracts": 1152,
+  "internal_train_samples": 1169,
+  "internal_train_contracts": 1036,
+  "internal_validation_samples": 126,
+  "internal_validation_contracts": 116,
+  "realized_validation_sample_ratio": 0.0972972972972973,
+  "realized_validation_contract_ratio": 0.10069444444444445,
+  "sample_label_counts": {
+    "outer_train": {
+      "0": 788,
+      "1": 507
+    },
+    "internal_train": {
+      "0": 710,
+      "1": 459
+    },
+    "internal_validation": {
+      "0": 78,
+      "1": 48
+    }
+  },
+  "contract_label_strata": {
+    "0": {
+      "outer_train_contracts": 726,
+      "internal_train_contracts": 653,
+      "internal_validation_contracts": 73
+    },
+    "1": {
+      "outer_train_contracts": 426,
+      "internal_train_contracts": 383,
+      "internal_validation_contracts": 43
+    }
+  },
+  "train_validation_contract_overlap_count": 0,
+  "outer_test_file": "/home/HardDisk/imran/GLT-MGA_GitHub/train_data/ablation_study/GLT-MGA_without_DFG/reentrancy/valid.json",
+  "outer_test_samples": 317,
+  "outer_test_contracts": 288,
+  "outer_test_sample_label_counts": {
+    "0": 195,
+    "1": 122
+  },
+  "outer_train_test_contract_overlap_count": 0
+}
