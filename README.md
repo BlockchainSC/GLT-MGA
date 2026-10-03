@@ -12,7 +12,7 @@ GLT-MGA performs function-level **reentrancy (SWC-107)** and **timestamp-depende
   </a>
 </p>
 
-The PNG above is used for GitHub preview. The paper-quality vector version is available at [`figures/figure_1_overview.pdf`](figures/figure_1_overview.pdf).
+
 
 ## Additional manuscript figures
 
